@@ -34,3 +34,40 @@ var twoSum = function(nums, target) {
         }
     }
 };
+
+/*
+    create a function that takes in an array and an int
+    create an object that uses the nums as keys
+    for each num, subtract it from the target and see if the result exists in the object
+    if it does, get the key value which is the place in the array
+*/
+
+var twoSum2 = function(nums, target) {
+    let obj = {};
+    for (let x = 0; x < nums.length; x++) {
+        obj[nums[x]] = x;
+    }
+    for (let y = 0; y < nums.length; y++) {
+        let product = target - nums[y];
+        let string = product.toString();
+        if (obj.hasOwnProperty(string) && obj[string] !== y){
+            return [y, obj[product]];
+        }
+    }
+}
+
+
+var twoSum3 = function(nums, target) {
+    let obj = {};
+    for (let x = 0; x < nums.length; x++) {
+        let product = target - nums[x];
+        if (product in obj) {
+            return [obj[product], x];
+        }
+        obj[nums[x]] = x;
+    }
+}
+
+
+console.log(twoSum3([2,7,11,15], 9));
+// twoSum2([2,7,11,15], 9);
