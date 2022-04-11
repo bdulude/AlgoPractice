@@ -8,7 +8,6 @@ Given an integer array nums, return true if any value appears at least twice in 
 var containsDuplicate = function(nums) {
     let obj = {};
     for (num of nums) {
-        console.log(num);
         if (obj.hasOwnProperty(num)) {
             return true;
         }
