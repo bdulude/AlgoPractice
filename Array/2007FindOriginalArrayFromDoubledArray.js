@@ -40,6 +40,7 @@ if there's any entries left over it is not a doubled array
 
 
 Ugh so this approach workes for the examples they give, but fails the case [0, 0, 0, 0] which expects the output of [0,0]
+So it doesn't work with duplicates.
 
 */
 
@@ -68,5 +69,6 @@ const findOriginalArray = function (changed) {
 
 // console.log(findOriginalArray([1,3,4,2,6,8]));
 // console.log(findOriginalArray([0,0,0,0]));
-console.log(findOriginalArray([6,3,0,1]));
-console.log(findOriginalArray([1]));
+// console.log(findOriginalArray([6,3,0,1]));
+// console.log(findOriginalArray([1]));
+console.log(findOriginalArray([2,1,2,4,2,4]));
