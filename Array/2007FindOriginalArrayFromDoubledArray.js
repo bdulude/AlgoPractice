@@ -40,7 +40,7 @@ if there's any entries left over it is not a doubled array
 
 
 Ugh so this approach workes for the examples they give, but fails the case [0, 0, 0, 0] which expects the output of [0,0]
-So it doesn't work with duplicates.
+So it doesn't work with duplicates. Something I should have considered from the start.
 
 */
 
