@@ -92,16 +92,10 @@ const reverseList3 = function(head) {
     return reverse(head, newHead)
 }
 const reverse = function(head, previous) {
-    // After reaching the end of the linked List return the list
     if (head === null) return previous
-    // To keep track of the original linked list so we don't loose it.
     let nextNode = head.next
-    // Get the next node of the linked list
     head.next = previous
-    // Move previous to the next Node
     previous = head
-    // Change the head to the next node
     head = nextNode
-    // Recursively call the function
     return reverse(head, previous)
 }
