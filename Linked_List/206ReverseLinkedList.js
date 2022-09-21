@@ -91,11 +91,14 @@ const reverseList3 = function(head) {
     let newHead = null
     return reverse(head, newHead)
 }
+// head -> head.next, previous -> head
 const reverse = function(head, previous) {
     if (head === null) return previous
-    let nextNode = head.next
-    head.next = previous
-    previous = head
-    head = nextNode
+
+    [head, head.next] = [previous, head]
+    // let nextNode = head.next
+    // head.next = previous
+    // previous = head
+    // head = nextNode
     return reverse(head, previous)
 }
