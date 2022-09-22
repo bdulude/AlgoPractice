@@ -86,19 +86,13 @@ const reverseList2 = function(head) {
     return previous
 }
 
-// Recursive from https://leetcode.com/problems/reverse-linked-list/discuss/2234246/JavaScript-Recursive
+// Recursive
 const reverseList3 = function(head) {
-    let newHead = null
-    return reverse(head, newHead)
-}
-// head -> head.next, previous -> head
-const reverse = function(head, previous) {
-    if (head === null) return previous
-
-    [head, head.next] = [previous, head]
-    // let nextNode = head.next
-    // head.next = previous
-    // previous = head
-    // head = nextNode
-    return reverse(head, previous)
+    const reverse = function(previous, head){
+        if (head === null) return previous
+        let next = head.next
+        head.next = previous
+        return reverse(head, next)
+    }
+    return reverse(null, head)
 }
