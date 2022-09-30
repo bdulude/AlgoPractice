@@ -15,6 +15,7 @@ Explanation: [4,9] is also accepted.
 
 /*
     Make a hashmap for one, iterate over second and push matches to output
+    Updated to use sets for both, removes the extra lookups that hash tables need
 */
 
 /**
